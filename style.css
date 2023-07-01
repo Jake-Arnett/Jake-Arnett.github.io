@@ -127,3 +127,96 @@ span {
     border: none;
     background-color: hsl(145, 40%, 35%);
 }
+
+.tile.shake {
+    animation: shake 500ms ease-in-out;
+}
+
+.tile.dance {
+    animation: dance 500ms ease-in-out;
+}
+
+.tile.flip {
+    transform: rotateX(90deg);
+}
+
+@keyframes shake {
+    10% {
+      transform: translateX(-5%);
+    }
+  
+    30% {
+      transform: translateX(5%);
+    }
+  
+    50% {
+      transform: translateX(-8%);
+    }
+  
+    70% {
+      transform: translateX(8%);
+    }
+  
+    90% {
+      transform: translateX(-5%);
+    }
+  
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes dance {
+    20% {
+      transform: translateY(-50%);
+    }  
+  
+    40% {
+      transform: translateY(5%);
+    }  
+  
+    60% {
+      transform: translateY(-25%);
+    }  
+  
+    80% {
+      transform: translateY(2.5%);
+    }  
+  
+    90% {
+      transform: translateY(-5%);
+    }  
+  
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+.alert-container {
+    position: fixed;
+    top: 25.6vh;
+    left: 50vw;
+    transform: translateX(-50%);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.alert {
+    pointer-events: none;
+    background-color: hsl(215, 20%, 75%);
+    padding: .75em;
+    border-radius: 0.15em;
+    opacity: 1;
+    transition: opacity 250ms ease-in-out;
+    margin-bottom: 1.46em;
+}
+
+.alert:last-child {
+    margin-bottom: 0;
+}
+
+.alert.hide {
+    opacity: 0;
+}
